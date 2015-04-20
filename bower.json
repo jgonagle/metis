@@ -1,0 +1,19 @@
+{
+    "name": "Pinga",
+    "version": "1.0.0",
+    "authors": [
+        "John McGonagle"
+    ],
+    "description": "A smart product recommendation website",
+    "homepage": "https://github.com/jgonagle/pinga",
+    "dependencies": {
+        "bootstrap-sass": "~3.3.4",
+        "angular": "~1.3.15",
+        "angular-ui-router": "~0.2.13",
+        "modernizr": "~2.8.3",
+        "lodash": "~3.7.0",
+        "d3": "~3.5.5"
+    },
+    "devDependencies": {},
+    "private": true
+}
