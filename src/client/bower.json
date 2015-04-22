@@ -1,11 +1,11 @@
 {
-    "name": "Pinga",
+    "name": "Metis Client",
     "version": "1.0.0",
     "authors": [
         "John McGonagle"
     ],
-    "description": "A smart product recommendation website",
-    "homepage": "https://github.com/jgonagle/pinga",
+    "description": "Metis front-end using AngularJS",
+    "homepage": "https://github.com/jgonagle/metis",
     "dependencies": {
         "bootstrap-sass": "~3.3.4",
         "angular": "~1.3.15",

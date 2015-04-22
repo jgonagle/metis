@@ -1,44 +1,23 @@
 module.exports = function (grunt) {
     // Config tasks and options
     grunt.initConfig({
-        watch: {},
-        validation: {},
-        scsslint: {},
-        sass: {},
-        autoprefixer: {},
-        csslint: {},
-        jshint: {},
-        concat: {},
-        uglify: {},
-        cssmin: {},
-        imagemin: {},
-        clean: {},
-        wiredep: {},
-        karma: {},
-        express: {},
-        open: {},
-        concurrent: {}
+        concurrent: {
+            build: {
+                tasks: ['build-server', 'build-client']
+            }
+        }
     });
 
     // Load plugins
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-html-validation');
-    grunt.loadNpmTasks('grunt-scss-lint');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-autoprefixer');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-wiredep');
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-express-server');
-    grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-concurrent');
 
+    // Load client and server Grunt tasks
+    grunt.loadTasks('src/client/Gruntfile.js');
+    grunt.loadTasks('src/server/Gruntfile.js');
+
     // Register tasks
-    grunt.registerTask('default', function(){});
+    grunt.registerTask('build-all', ['concurrent:build']);
+    grunt.registerTask('start-all', ['start-server', 'start-client']);
+
+    grunt.registerTask('default', ['build-all', 'start-all']);
 };

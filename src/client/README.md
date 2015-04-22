@@ -1,16 +1,14 @@
-# Metis
+# Metis Client
 
-A smart product recommendation website
+Metis front-end using AngularJS
 
 ### Install Bower and JavaScript dependencies
 
 Execute the following on the command line from this directory (requires
 [Bower](http://bower.io/) and [Node Package Manager (NPM)](https://www.npmjs.com/)).
 ```
+bower install
 npm install
-cd src/client && bower install && npm install
-cd ../server && bower install && npm install
-cd ../..
 ```
 
 ## Instructions
