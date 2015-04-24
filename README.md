@@ -7,10 +7,8 @@ A smart product recommendation website
 Execute the following on the command line from this directory (requires
 [Bower](http://bower.io/) and [Node Package Manager (NPM)](https://www.npmjs.com/)).
 ```
+bower install
 npm install
-cd src/client && bower install && npm install
-cd ../server && bower install && npm install
-cd ../..
 ```
 
 ## Instructions
@@ -24,4 +22,20 @@ grunt
 ```
 
 ### Grunt
+
 ### Other
+
+**Manually start the MongoDB server**
+```
+cd src/server
+mkdir -p ./data/mongodb && mkdir -p ./logs
+mongod --dbpath ./data/mongodb --logpath ./logs/mongodb.log --logappend --fork
+cd ../..
+```
+
+**Manually terminate the MongoDB server**
+```
+cd src/server
+mongod --dbpath ./data/mongodb --shutdown
+cd ../..
+```

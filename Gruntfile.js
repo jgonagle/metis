@@ -1,23 +1,51 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
+    'use strict';
+
     // Config tasks and options
     grunt.initConfig({
-        concurrent: {
-            build: {
-                tasks: ['build-server', 'build-client']
-            }
-        }
+        wiredep: {},
+        validation: {},
+        scsslint: {},
+        sass: {},
+        autoprefixer: {},
+        csslint: {},
+        jscs: {},
+        jshint: {},
+        concat: {},
+        cssmin: {},
+        uglify: {},
+        imagemin: {},
+        karma: {},
+        clean: {},
+        express: {},
+        open: {},
+        watch: {},
+        concurrent: {}
     });
 
     // Load plugins
+    grunt.loadNpmTasks('grunt-wiredep');
+    grunt.loadNpmTasks('grunt-html-validation');
+    grunt.loadNpmTasks('grunt-scss-lint');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-jscs');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
 
-    // Load client and server Grunt tasks
-    grunt.loadTasks('src/client/Gruntfile.js');
-    grunt.loadTasks('src/server/Gruntfile.js');
-
     // Register tasks
-    grunt.registerTask('build-all', ['concurrent:build']);
-    grunt.registerTask('start-all', ['start-server', 'start-client']);
+    grunt.registerTask('build', []);
+    grunt.registerTask('start', []);
 
-    grunt.registerTask('default', ['build-all', 'start-all']);
+    grunt.registerTask('default', ['build', 'start']);
 };
